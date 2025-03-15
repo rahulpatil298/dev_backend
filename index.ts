@@ -22,6 +22,8 @@ dbConnect();
 app.use(cors());
 app.use(express.json());
 
+app.use(cors({ origin: '*' })); // Or specify the origin you want to allow
+
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
   next();
