@@ -23,6 +23,12 @@ app.use(cors());
 app.use(express.json());
 
 app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  next();
+});
+
+
+app.use((req, res, next) => {
   console.log("Incoming Request:", req.method, req.path);
   console.log("Headers:", req.headers);
   console.log("Body:", req.body);
